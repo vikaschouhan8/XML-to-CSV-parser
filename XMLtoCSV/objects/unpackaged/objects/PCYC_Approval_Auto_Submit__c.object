@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>PCYC Auto Submit Configuration</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Developer_Record_Types__c</fullName>
+        <description>Account Record Type names</description>
+        <externalId>false</externalId>
+        <label>Developer Record Types</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile_Names__c</fullName>
+        <description>Multiple profiles delimited by comma character.</description>
+        <externalId>false</externalId>
+        <label>Profile Names</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PCYC Approval Auto Submit</label>
+    <visibility>Protected</visibility>
+</CustomObject>

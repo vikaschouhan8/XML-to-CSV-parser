@@ -1,0 +1,2380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Coaching Reports object is used for rating and assessment of reps by their managers.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Call_Productivity__c</fullName>
+        <description>Call productivity rating.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>5 – Superior
+4 – Exceeds expectations
+3 – Meets expectations
+2 – Below expectations
+1 – Poor</inlineHelpText>
+        <label>Call Productivity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Division_PTP__c</fullName>
+        <externalId>false</externalId>
+        <label>Division PTP</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Employee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The rep being rated.</description>
+        <externalId>false</externalId>
+        <label>HCAS</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Coaching_Reports1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Manager_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Manager that is filling out the rating.</description>
+        <externalId>false</externalId>
+        <label>Manager</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>contains</operation>
+                <value>PCYC_Sales_Mgr</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Coaching_Reports_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Internal field used to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Rating__c</fullName>
+        <description>Overall rating.</description>
+        <externalId>false</externalId>
+        <formula>(VALUE(TEXT(Call_Productivity__c)))/5</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_2015_Strategic_Imperatives__c</fullName>
+        <defaultValue>&quot;Message: Multiple on-label indication presentations on every call.&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Reach: 85% of H/VH targets seen each quarter. Impact 5 prescribers/day.&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Purpose: Selling objectives for each customer. Close on every call.&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Force: JBI Partners - Alignment and Execution across all leadership levels.&quot; &amp; BR() &amp; BR()</defaultValue>
+        <description>2015 Strategic Imperatives for Field Coaching Report</description>
+        <externalId>false</externalId>
+        <label>2015 Strategic Imperatives</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_2015_Strategic_Priorities__c</fullName>
+        <defaultValue>&quot;• Expand Prescriber Base &quot; &amp; BR() &amp; BR() &amp;
+
+&quot;• Increase Frequency of on-label IMBRUVICA Use&quot; &amp; BR() &amp; BR() &amp;
+
+&quot;• Improve Adherence &amp; Duration of Therapy&quot; &amp; BR()</defaultValue>
+        <description>2015 Strategic Priorities under Field Coaching Report</description>
+        <externalId>false</externalId>
+        <label>2015 Strategic Priorities</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_2016_Strategic_Imperatives__c</fullName>
+        <defaultValue>&quot;Maximize Frontline 1L CLL Opportunity.&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Drive treatment to progression- Link treat to progression (TTP) to efficacy&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Enable Simple, Fast and affordable Access to all on-label patients&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Execute on PCYC Call Plans and Promotional Speaker programs&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;Improve execution with JBI business partners&quot; &amp; BR() &amp; BR()</defaultValue>
+        <externalId>false</externalId>
+        <label>2016 Strategic Imperatives</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_2016_Strategic_Priorities__c</fullName>
+        <defaultValue>&quot;• Sales Performance- Meet or Exceed 2016 on-label sales goal &quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;• Generate Demand through Customer Engagement&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;• Taking ownership in creating a great work environment&quot; &amp; BR()</defaultValue>
+        <externalId>false</externalId>
+        <label>2016 Strategic Priorities</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Account_s_Visited__c</fullName>
+        <externalId>false</externalId>
+        <label>Account(s) Visited</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Agreed_Upon_Action_Steps__c</fullName>
+        <externalId>false</externalId>
+        <label>Agreed Upon Action Steps</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Call_Continuity__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Continuity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Closing__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Comments_F_u_on_Prior_Action_Steps__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Comments_HCAS_Expectations__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Comments_Selling_Excellence__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Comments_Territory_Business_Mgmt__c</fullName>
+        <description>Territory Business Management section comments for the sales representative.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Comments_YTD_Sales_Perf_Results__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Demand_Report_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Demand Report Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Employee_Acknowledged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>HCAS Acknowledged</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Employee_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>HCAS Comments (optional)</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Field_Day_Agenda__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Day Agenda</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_HCAS_QTD_Territory_Attainment__c</fullName>
+        <externalId>false</externalId>
+        <label>HCAS QTD Territory % Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Hematology_Brand_Objectives__c</fullName>
+        <defaultValue>&quot;• Establish the BTK market and redefine treatment expectations&quot; &amp; BR() &amp; BR() &amp; 
+&quot;- Educate customers on IMBRUVICA‘s unique mechanism of action&quot; &amp; BR() &amp; 
+&quot;and is a first-in-class, covalent BTK inhibitor&quot; &amp; BR() &amp; BR() &amp; BR() &amp; 
+
+&quot;• Communicate IMBRUVICA efficacy and safety&quot; &amp; BR() &amp; BR() &amp; 
+&quot;- Probe to fully understand CLL and MCL treatment preferences&quot; &amp; BR() &amp; 
+&quot;- Seize opportunities to change behaviors in 1-prior CLL with&quot; &amp; BR() &amp;
+&quot;IMBRUVICA by communicating efficacy and safety in 1 prior&quot; &amp; BR() &amp; 
+&quot;CLL regardless of prognostic risk or cytogenetics&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;- Target CLL patients who have received 1 prior therapy&quot; &amp; BR() &amp; 
+&quot;--- Previously treated with chemo-immuno therapy&quot; &amp; BR() &amp; 
+&quot;--- Previously treated with single agent therapy&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;- Establish IMBRUVICA as the sole standard of care in all lines of deletion 17p CLL&quot; &amp; BR() &amp; 
+&quot;--- Target appropriate 1L deletion 17p patients&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;- Seize opportunities to change behaviors in 1-prior MCL with IMBRUVICA&quot; &amp; BR() &amp; 
+&quot;--- Target MCL patients who have received 1 prior therapy&quot; &amp; BR() &amp; 
+&quot;--- Previously treated fit patients&quot; &amp; BR() &amp; 
+&quot;--- Previously treated, good response to chemo-immuno therapy&quot; &amp; BR() &amp; BR() &amp; BR() &amp; 
+
+&quot;• Solidify the value of oral dosing, adherence and access programs&quot; &amp; BR() &amp; BR() &amp; 
+
+&quot;- Educate customers on the value proposition, coverage status and&quot; &amp; BR() &amp; 
+&quot;You&amp;I access support programs to ensure patient access to&quot; &amp; BR() &amp; 
+&quot;IMBRUVICA&quot; &amp; BR() &amp; 
+&quot;- Ensure account level confidence in the IMBRUVICA distribution model&quot; &amp; BR() &amp; 
+&quot;and that all customers have access to IMBRUVICA&quot; &amp; BR() &amp; 
+&quot;regardless of local preferred supply chain&quot;</defaultValue>
+        <description>Admin to own this (Steve Marks) – Brand provides objectives each period QTR or TRIMESTER</description>
+        <externalId>false</externalId>
+        <label>Hematology Brand Objectives</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Key_Messages__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Messages</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Local_Goal_Update__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>(Text Field to copy and past local goal)</inlineHelpText>
+        <label>Local Goal Update</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_National_PTP__c</fullName>
+        <externalId>false</externalId>
+        <label>National PTP</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Objection_Handling__c</fullName>
+        <externalId>false</externalId>
+        <label>Objection Handling</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Overall_FCR_Rating__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Exceeds – Exceeds expectations
+Meets – Meets expectations
+Sometimes Meets – Sometimes Meets expectations
+Does Not Meet – Does Not Meet expectations
+N/A – Not Applicable</inlineHelpText>
+        <label>Overall FCR Rating</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sometimes Meets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Does Not Meet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Post_Call_Analysis__c</fullName>
+        <externalId>false</externalId>
+        <label>Post Call Analysis</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Pre_Call_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre-Call Plan</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Previous_Agreed_Upon_Action_Steps__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Agreed Upon Action Steps</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Probing_Listening__c</fullName>
+        <externalId>false</externalId>
+        <label>Probing &amp; Listening</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_QTD_Division_Average_Attainment__c</fullName>
+        <externalId>false</externalId>
+        <label>QTD Division Average % Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_QTD_National_Average_Attainment__c</fullName>
+        <externalId>false</externalId>
+        <label>QTD National Average % Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_R13_Growth__c</fullName>
+        <externalId>false</externalId>
+        <label>R13 Growth</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_R4_Growth__c</fullName>
+        <externalId>false</externalId>
+        <label>R4 Growth</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_RSD_Acknowledged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>RSD Acknowledged</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_RSD_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>RSD Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Region_PTP__c</fullName>
+        <externalId>false</externalId>
+        <label>Region PTP</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Review_Date_2__c</fullName>
+        <description>The 2nd date the review was filled out.</description>
+        <externalId>false</externalId>
+        <label>Review Date 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Sales_Performance_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Performance Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Strategic_Territory_Management__c</fullName>
+        <externalId>false</externalId>
+        <label>Strategic Territory Management</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Achieved</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Territory_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Territory Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Territory_PTP__c</fullName>
+        <externalId>false</externalId>
+        <label>Territory PTP</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Total_Capsules_R13W__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Capsules R13W</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Review_Date__c</fullName>
+        <description>Date the review was filled out.</description>
+        <externalId>false</externalId>
+        <label>Review Date 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Review_Period__c</fullName>
+        <description>Time period that the performance review refers to.</description>
+        <externalId>false</externalId>
+        <label>Review Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of the review.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSD Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Final</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HCAS Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Field Coaching Report</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Manager_vod__c</columns>
+        <columns>Employee_vod__c</columns>
+        <columns>Status__c</columns>
+        <columns>Review_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Final,HCAS Review</value>
+        </filters>
+        <label>All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>HCAS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_FCRs</fullName>
+        <columns>NAME</columns>
+        <columns>Manager_vod__c</columns>
+        <columns>Employee_vod__c</columns>
+        <columns>Status__c</columns>
+        <columns>Review_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All FCRs</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Sales_Manager</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>FCR-{00000000}</displayFormat>
+        <label>Coaching Report Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Field Coaching Reports</pluralLabel>
+    <recordTypes>
+        <fullName>Employee_Review</fullName>
+        <active>false</active>
+        <description>Employee Review Coaching Report</description>
+        <label>Employee Review</label>
+        <picklistValues>
+            <picklist>Call_Productivity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Call_Continuity__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Closing__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Field_Day_Agenda__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Key_Messages__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Objection_Handling__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Overall_FCR_Rating__c</picklist>
+            <values>
+                <fullName>Does Not Meet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sometimes Meets</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Post_Call_Analysis__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Pre_Call_Plan__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Probing_Listening__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Strategic_Territory_Management__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Review_Period__c</picklist>
+            <values>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YTD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Employee Review</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Final</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HCAS Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Final</fullName>
+        <active>true</active>
+        <description>Final Coaching Report</description>
+        <label>Final</label>
+        <picklistValues>
+            <picklist>Call_Productivity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Call_Continuity__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Closing__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Field_Day_Agenda__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Key_Messages__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Objection_Handling__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Overall_FCR_Rating__c</picklist>
+            <values>
+                <fullName>Does Not Meet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sometimes Meets</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Post_Call_Analysis__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Pre_Call_Plan__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Probing_Listening__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Strategic_Territory_Management__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Review_Period__c</picklist>
+            <values>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YTD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Final</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>HCAS Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>HCAS_Review</fullName>
+        <active>true</active>
+        <description>HCAS Review replacing Employee Review</description>
+        <label>HCAS Review</label>
+        <picklistValues>
+            <picklist>Call_Productivity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Call_Continuity__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Closing__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Field_Day_Agenda__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Key_Messages__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Objection_Handling__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Overall_FCR_Rating__c</picklist>
+            <values>
+                <fullName>Does Not Meet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sometimes Meets</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Post_Call_Analysis__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Pre_Call_Plan__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Probing_Listening__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Strategic_Territory_Management__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Review_Period__c</picklist>
+            <values>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YTD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Final</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HCAS Review</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PCYC_Draft</fullName>
+        <active>true</active>
+        <description>Draft Coaching Reports</description>
+        <label>Draft</label>
+        <picklistValues>
+            <picklist>Call_Productivity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Call_Continuity__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Closing__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Field_Day_Agenda__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Key_Messages__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Objection_Handling__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Overall_FCR_Rating__c</picklist>
+            <values>
+                <fullName>Does Not Meet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sometimes Meets</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Post_Call_Analysis__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Pre_Call_Plan__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Probing_Listening__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_Strategic_Territory_Management__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Review_Period__c</picklist>
+            <values>
+                <fullName>Apr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feb</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jul</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nov</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YTD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>HCAS Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RSD Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Manager_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Employee_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Review_Date__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

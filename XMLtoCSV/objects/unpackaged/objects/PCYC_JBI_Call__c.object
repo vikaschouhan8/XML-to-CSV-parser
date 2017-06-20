@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Staging JBI Call records.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>PCYC_Account_vod__c</fullName>
+        <description>Account Id)</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Address_Line_1_vod__c</fullName>
+        <description>Address Line 1 of the Call Address. This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Address_Line_2_vod__c</fullName>
+        <description>Address Line 2 of the Call Address.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Call_Date_vod__c</fullName>
+        <description>The date of the call when it was first saved or submitted. This field is set via a trigger to the current date if neither the date or datetime field is supplied.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Call_Datetime_vod__c</fullName>
+        <description>The time when the rep specified for the call unless the call was signed, in which case this is the signature time.  This field is optional for users who which to plan their calls down to a specific hour or minute.  If a datetime is specified, a corresponding salesforce.com event is created via a trigger for calendar integration.</description>
+        <externalId>false</externalId>
+        <label>Datetime</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Call_Source__c</fullName>
+        <description>Call Source.</description>
+        <externalId>false</externalId>
+        <label>Call Source</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Call_Type_vod__c</fullName>
+        <description>Call Type.</description>
+        <externalId>false</externalId>
+        <label>Call Type</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_City_vod__c</fullName>
+        <description>City of the Call Address.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credentials_vod__c</fullName>
+        <description>The credentials of the Account signing for a sample</description>
+        <externalId>false</externalId>
+        <label>Credentials</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Del_Flg__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Delete Flag, default flase.</description>
+        <externalId>false</externalId>
+        <label>Delete Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Error_Messages__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Error Messages if any</inlineHelpText>
+        <label>Error Messages</label>
+        <length>4096</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_External_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External Call ( JBI Call record Id)</description>
+        <externalId>true</externalId>
+        <label>JBI Call Id</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_JBI_Rep_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>JBI Rep Email</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_JBI_Rep_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>JBI Rep Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_JBI_Rep_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>JBI Rep Phone</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_JBI_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>JBI Status</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_JBI_TerritoryId__c</fullName>
+        <externalId>false</externalId>
+        <label>JBI TerritoryId</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Load_Status__c</fullName>
+        <defaultValue>&quot;Staged&quot;</defaultValue>
+        <description>status.</description>
+        <externalId>false</externalId>
+        <label>Load Status</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MSL_Flag__c</fullName>
+        <defaultValue>&quot;N&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>MSL Flag</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MSL_Planned_Saved_Call__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MSL Planned Saved Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_RecordTypeId__c</fullName>
+        <description>Record Type</description>
+        <externalId>false</externalId>
+        <label>Record Type Id</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_State_vod__c</fullName>
+        <description>State of the Call Address.  This field should not be displayed on the Page Layout..</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Status_vod__c</fullName>
+        <description>status.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Zip_vod__c</fullName>
+        <description>Zip Code of the Call Address.  This field should not be displayed on the Page Layout..</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Staging JBI Call</label>
+    <nameField>
+        <label>JBI Call Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Staging JBI Calls</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

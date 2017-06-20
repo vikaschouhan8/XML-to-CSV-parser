@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Address Compensation Settings e.g. Approval Reminder triggered days, reminder email tempalate</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Approval_Complete_CC__c</fullName>
+        <description>Componsation Approval Completed (approved or rejected) CC Addresses (Optional)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Componsation Approval Completed (approved or rejected) CC Addresses (Optional)</inlineHelpText>
+        <label>Approval Complete CC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Process__c</fullName>
+        <description>Approval Process API Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval Process API Name</inlineHelpText>
+        <label>Approval Process</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Reminder_CC__c</fullName>
+        <description>Componsation Approval Reminder CC Addresses (Optional)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Componsation Approval Reminder CC Addresses (Optional)</inlineHelpText>
+        <label>Approval Reminder CC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Reminder_Day__c</fullName>
+        <description>Number of days between submitting approval and first approval reminder notification</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days between submitting approval and first approval reminder notification</inlineHelpText>
+        <label>Approval Reminder Day</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Reminder_Template__c</fullName>
+        <description>Email Template (API Name) for Approval Reminder</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Template (API Name) for Approval Reminder</inlineHelpText>
+        <label>Approval Reminder Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approve_Template__c</fullName>
+        <description>Email Template (API Name) for approved Compensation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Template (API Name) for approved Compensation</inlineHelpText>
+        <label>Approve Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager_Role_Pattern__c</fullName>
+        <description>Manager Role RegExp Pattern</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Manager Role RegExp Pattern</inlineHelpText>
+        <label>Manager Role Pattern</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Org_Wide_Address__c</fullName>
+        <description>Organization-Wide Address used to send email notifications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Organization-Wide Address used to send email notifications</inlineHelpText>
+        <label>Organization-Wide Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reject_Template__c</fullName>
+        <description>Email Template (API Name) for rejected Compensation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Template (API Name) for rejected Compensation</inlineHelpText>
+        <label>Reject Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Territory_Pattern__c</fullName>
+        <description>Sales Reps Territory RegExp Pattern</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sales Reps Territory RegExp Pattern</inlineHelpText>
+        <label>Sales Territory Pattern</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Address Compensation Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

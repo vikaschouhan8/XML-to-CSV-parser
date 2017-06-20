@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>125</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Fulfillment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Fulfillment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_MIR_Creator_Email_Workflow__c</fullName>
+        <description>ES 8/9/2013: This field is not displayed to users; created for workflow for email alert to MIR&apos;s creator. When MIR is created, it populates this field. Then workflow is triggered to populate the MIR Creator Email field with this value.</description>
+        <externalId>false</externalId>
+        <formula>PCYC_Medical_Inquiry__r.CreatedBy.Email</formula>
+        <label>MIR Creator Email Workflow</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MIR_Creator_Email__c</fullName>
+        <description>ES 8/9/2013: This field is not visible to users; created for workflow to trigger email alert to MIR creator when it has been fulfilled. Another workflow will stamp this with value from MIR Creator Email Workflow field.</description>
+        <externalId>false</externalId>
+        <label>MIR Creator Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MSL_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>MSL Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_MedInfo_CC_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MedInfo CC Completed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Medical_Inquiry__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Inquiry</label>
+        <referenceTo>Medical_Inquiry_vod__c</referenceTo>
+        <relationshipLabel>Medical Inquiry Responses</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Medical Inquiry Response</label>
+    <listViews>
+        <fullName>All_Medical_Inquiry_Responses</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>PCYC_Medical_Inquiry__c</columns>
+        <columns>PCYC_Fulfillment_Status__c</columns>
+        <columns>PCYC_MSL_Status__c</columns>
+        <columns>PCYC_MedInfo_CC_Completed__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Medical Inquiry Responses</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Medical_Inquiry_Responses</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>PCYC_MSL_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Medical Inquiry Responses</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>MIR-{0000000}</displayFormat>
+        <label>Medical Inquiry Response Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Inquiry Responses</pluralLabel>
+    <recordTypes>
+        <fullName>MIR</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Response</description>
+        <label>MIR</label>
+        <picklistValues>
+            <picklist>PCYC_Fulfillment_Status__c</picklist>
+            <values>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_MSL_Status__c</picklist>
+            <values>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PCYC_MIR_Completed</fullName>
+        <active>true</active>
+        <label>MIR - Completed</label>
+        <picklistValues>
+            <picklist>PCYC_Fulfillment_Status__c</picklist>
+            <values>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PCYC_MSL_Status__c</picklist>
+            <values>
+                <fullName>Completed - Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed - Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PCYC_MSL_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER.ALIAS</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

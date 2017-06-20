@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>PCYC Linked Physician Configuration e.g. list of valid credentials</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>PCYC_Credential_01__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #01</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_02__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #02</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_03__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #03</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_04__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #04</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_05__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #05</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_06__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #06</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_07__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #07</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_08__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #08</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_09__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #09</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_10__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #10</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_11__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #11</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_12__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #12</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_13__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #13</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_14__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #14</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Credential_15__c</fullName>
+        <defaultValue>&apos;NOT USED&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credential #15</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Linked Physician Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

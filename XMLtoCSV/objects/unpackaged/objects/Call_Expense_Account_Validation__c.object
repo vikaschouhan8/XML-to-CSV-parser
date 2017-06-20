@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Call Expense Account Validation Batch Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Non_HCP_Record_Types__c</fullName>
+        <description>Non HCP Record Types</description>
+        <externalId>false</externalId>
+        <label>Non HCP Record Types</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notification_Email_List__c</fullName>
+        <description>Notification Email</description>
+        <externalId>false</externalId>
+        <label>Notification Email List</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <description>Password</description>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>32</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <description>Username</description>
+        <externalId>false</externalId>
+        <label>Username</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Call Expense Account Validation</label>
+    <visibility>Protected</visibility>
+</CustomObject>

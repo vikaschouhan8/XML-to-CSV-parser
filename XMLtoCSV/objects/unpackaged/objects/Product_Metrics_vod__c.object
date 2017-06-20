@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all metrics available for all accounts. Each metric is specific to a product, so the logical key is (account, product).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Account is the master object for product metrics.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Awareness__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Awareness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unaware</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Developing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aware</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prefers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advocate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics (Detail Group)</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engagements__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Engagements</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Formulary_Status__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Formulary Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>On Formulary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On/Restricted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On/Prior Auth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On/Exclusive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Investigator_Readiness__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Investigator Readiness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beginner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experienced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leader</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Location_Child_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field that gets stamped with the Child Account of the Child Account record</description>
+        <externalId>false</externalId>
+        <label>Location Child</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics (Location Child)</relationshipLabel>
+        <relationshipName>Product_Metrics_Location_Child_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_Parent_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field that gets stamped with the Parent Account of the Child Account record</description>
+        <externalId>false</externalId>
+        <label>Location Parent</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics (Location Parent)</relationshipLabel>
+        <relationshipName>Product_Metrics_Location_Parent_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship where the product metrics are set</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>Child_Account_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Movement__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Movement</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Last_Updated_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Suggested Target or Target Segment last updated by.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Suggested Target Information Last Updated by</inlineHelpText>
+        <label>Last Updated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Product_Metrics</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Last_Updated_Date__c</fullName>
+        <description>Last Updated Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Suggestion Target Info last updated date</inlineHelpText>
+        <label>Last Updated Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_Priority__c</fullName>
+        <description>NHL Priority</description>
+        <externalId>false</externalId>
+        <label>NHL Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Suggested_Target_Segment__c</fullName>
+        <description>PCYC Suggested Target Segment</description>
+        <externalId>false</externalId>
+        <label>Suggested Target Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Very High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Suggested_Target__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Suggested Target</description>
+        <externalId>false</externalId>
+        <label>Suggested Target</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Target_Segment__c</fullName>
+        <description>PCYC_Target Segment</description>
+        <externalId>false</externalId>
+        <label>Target Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Very High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Target__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>PCYC Target</description>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Products_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The products field is required and shows which product relates to the metric row.</description>
+        <externalId>false</externalId>
+        <label>Products</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Products_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Selling_Stage__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Selling Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pre-Launch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contracting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-Launch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pull Through</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Speaker_Skills__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Speaker Skills</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Novice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intermediate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expert</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>X12_mo_trx_chg__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>12 mo TRx Chg</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Product Metrics</label>
+    <nameField>
+        <displayFormat>M-{0000000000}</displayFormat>
+        <label>Product Metrics Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Metrics</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Products_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Awareness__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Movement__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Segment__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Products_vod__c</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Awareness__c</searchFilterFields>
+        <searchFilterFields>Movement__c</searchFilterFields>
+        <searchFilterFields>Segment__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

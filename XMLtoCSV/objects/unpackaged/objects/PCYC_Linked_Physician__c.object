@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds connection between Non-Physician and Physician. Each relationship is connected to one of physician addresses.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The Mobile ID field allows for the creation of records on mobile device.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Account_Credentails__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PCYC_Account__r.Credentials_vod__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Non Physician Credentials</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Account__c</fullName>
+        <description>Non-Physician Person Account</description>
+        <externalId>false</externalId>
+        <label>Non Physician</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Account does not match filter criteria. Please choose Non-Physician Account.</errorMessage>
+            <filterItems>
+                <field>Account.IsPersonAccount</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.PCYC_Is_Physician_calc__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <infoMessage>Please choose Non-Physician Account.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Linked Physicians</relationshipLabel>
+        <relationshipName>PCYC_Linked_Physicians</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PCYC_Address__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>One of Physician&apos;s addresses</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Address does not match filter criteria. Please choose one of Physician&apos;s addresses.</errorMessage>
+            <filterItems>
+                <field>Address_vod__c.Account_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.PCYC_Physician__c</valueField>
+            </filterItems>
+            <infoMessage>Please choose one of Physician&apos;s addresses.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Address_vod__c</referenceTo>
+        <relationshipLabel>Linked Physicians</relationshipLabel>
+        <relationshipName>PCYC_Linked_Physicians</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID - concatenation of Non-Physician ID and Physician ID and address ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_External_Id_calc__c</fullName>
+        <description>External ID (formula) - concatenation of Non-Physician ID and Physician ID and address ID</description>
+        <externalId>false</externalId>
+        <formula>PCYC_Account__c &amp; &apos;_&apos; &amp;  PCYC_Physician__c &amp; &apos;_&apos; &amp; PCYC_Address__c</formula>
+        <label>External ID (calc)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Is_Physician_calc__c</fullName>
+        <description>Determines if credentials are valid for physicians. List of valid credentials is stored in Custom Setting: Linked Physician Settings</description>
+        <externalId>false</externalId>
+        <formula>PCYC_Physician__r.PCYC_Is_Physician_calc__c</formula>
+        <label>Is Physician?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCYC_Physician_Credentials__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(PCYC_Physician__r.Credentials_vod__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Physician Credentials</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Physician__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Physician Person Account</description>
+        <externalId>false</externalId>
+        <label>Physician</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.IsPersonAccount</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.PCYC_Is_Physician_calc__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Non Physician List</relationshipLabel>
+        <relationshipName>PCYC_Linked_Accounts</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Linked Physician</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LP#{00000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Linked Physicians</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ValidateLinkedRecord</fullName>
+        <active>true</active>
+        <description>ValidateLinkedRecord</description>
+        <errorConditionFormula>OR (  AND(PCYC_Account__r.IsPersonAccount,  PCYC_Account__r.PCYC_Is_Physician_calc__c), 
+AND(PCYC_Physician__r.IsPersonAccount,
+Not(PCYC_Physician__r.PCYC_Is_Physician_calc__c))
+)</errorConditionFormula>
+        <errorMessage>Please select Non Physician and Physician records properly</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Non_Physician_Link</fullName>
+        <availability>online</availability>
+        <description>New Non Physician Link</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Non Physician Link</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a46/e?retURL=/{!Account.Id}&amp;CF00NP0000000sQbp={!Account.Name}&amp;CF00NP0000000sQbp_lkid={!Account.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Physician_Link</fullName>
+        <availability>online</availability>
+        <description>New Physician Link</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Physician Link</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a46/e?retURL=/{!Account.Id}&amp;CF00NP0000000sQba={!Account.Name}&amp;CF00NP0000000sQba_lkid={!Account.Id}</url>
+    </webLinks>
+</CustomObject>

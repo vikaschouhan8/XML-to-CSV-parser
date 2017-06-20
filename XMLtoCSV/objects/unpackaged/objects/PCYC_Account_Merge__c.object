@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>PCYC Account Merge Staging table.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>PCYC_After_Merge_Data__c</fullName>
+        <description>After Merge : Existing Account Data in JSON</description>
+        <externalId>false</externalId>
+        <inlineHelpText>After merge existing account data in JSON.</inlineHelpText>
+        <label>After Merge Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Before_Merge_Data__c</fullName>
+        <description>Before Merge Existing Account Data in JSON</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Before merge existing account data in JSON.</inlineHelpText>
+        <label>Before Merge Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Error_Message__c</fullName>
+        <description>Merge Errors if any</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Errors if any during merge.</inlineHelpText>
+        <label>Merge Error Messages</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Existing_Veeva_Id__c</fullName>
+        <description>Existing Veeva Id</description>
+        <externalId>false</externalId>
+        <label>Existing Id</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Rejected_Merge_Data__c</fullName>
+        <description>Rejected Merge Data</description>
+        <externalId>false</externalId>
+        <inlineHelpText>before merge rejected account data in JSON, please note after merge rejected account is no longer present in salesforce.</inlineHelpText>
+        <label>Rejected Merge Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PCYC_Rejected_Veeva_Id__c</fullName>
+        <description>Rejected Veeva Id</description>
+        <externalId>false</externalId>
+        <label>Rejected Id</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Staging Account Merge</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PCYC_Existing_Veeva_Id__c</columns>
+        <columns>PCYC_Rejected_Veeva_Id__c</columns>
+        <columns>PCYC_Status__c</columns>
+        <columns>PCYC_After_Merge_Data__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Failed</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>PCYC_Error_Message__c</columns>
+        <columns>PCYC_Existing_Veeva_Id__c</columns>
+        <columns>PCYC_Rejected_Veeva_Id__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PCYC_Status__c</field>
+            <operation>equals</operation>
+            <value>Error</value>
+        </filters>
+        <label>Failed_Merges</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Corp</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>M{0}</displayFormat>
+        <label>Merge #</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Staging Account Merges</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

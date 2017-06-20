@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>For each Cycle_Plan_Target, it will hold the number of planned and actual calls, per product.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of actual details made for the account-product combination. This field will be updated automatically as details are made.</description>
+        <externalId>false</externalId>
+        <label>Actual Details</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attainment_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Planned_Details_vod__c &gt; 0, Actual_Details_vod__c/Planned_Details_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attainment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_Target_vod__c</fullName>
+        <description>The Cycle Plan Planned against which the Details are made.</description>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <referenceTo>Cycle_Plan_Target_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Details</relationshipLabel>
+        <relationshipName>Cycle_Plan_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_CLL_L1__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>CLL L1 Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_CLL_L2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Details for CLL L2</description>
+        <externalId>false</externalId>
+        <label>CLL L2 Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_CLL_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL Actual PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_CLL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>CLL Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_MCL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>MCL Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_MZL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Calls for MZL</description>
+        <externalId>false</externalId>
+        <label>MZL Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_NHL_MCL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Calls for NHL MCL</description>
+        <externalId>false</externalId>
+        <label>NHL MCL Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_NHL_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>NHL Actual PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_NHL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for NHL</description>
+        <externalId>false</externalId>
+        <label>NHL Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Actual_WM__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Actual Calls for WM</description>
+        <externalId>false</externalId>
+        <label>WM Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_1L_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>CLL L1 Priority</description>
+        <externalId>false</externalId>
+        <label>CLL-L1 Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_2L_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>CLL L2 Priority</description>
+        <externalId>false</externalId>
+        <label>CLL-L2 Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_L1_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_CLL_L1__c &gt; 0 &amp;&amp; PCYC_Planned_CLL_L1__c &gt; 0, ( PCYC_Actual_CLL_L1__c / PCYC_Planned_CLL_L1__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CLL L1 % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_L1_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL L1 Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_L2_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_CLL_L2__c &gt; 0 &amp;&amp; PCYC_Planned_CLL_L2__c &gt;0, ( PCYC_Actual_CLL_L2__c / PCYC_Planned_CLL_L2__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CLL L2 % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_L2_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL L2 Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_PDE_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_CLL_PDE__c &gt; 0 &amp;&amp; PCYC_Planned_CLL_PDE__c &gt; 0, ( PCYC_Actual_CLL_PDE__c / PCYC_Planned_CLL_PDE__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CLL PDE % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( PCYC_Actual_CLL__c &gt; 0 &amp;&amp; PCYC_Planned_CLL__c &gt;0,  ( PCYC_Actual_CLL__c / PCYC_Planned_CLL__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CLL Team % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_CLL_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MCL_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( PCYC_Actual_MCL__c &gt;0 &amp;&amp; PCYC_Planned_MCL__c &gt;0, ( PCYC_Actual_MCL__c / PCYC_Planned_MCL__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CLL MCL % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MCL_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>MCL Priority</description>
+        <externalId>false</externalId>
+        <label>MCL Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MCL_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>MCL Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MZL_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_MZL__c &gt; 0 &amp;&amp; PCYC_Planned_MZL__c &gt;0, ( PCYC_Actual_MZL__c / PCYC_Planned_MZL__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MZL % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MZL_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>MZL Priority</description>
+        <externalId>false</externalId>
+        <label>MZL Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_MZL_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>MZL Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_MCL_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( PCYC_Actual_NHL_MCL__c &gt; 0 &amp;&amp; PCYC_Planned_NHL_MCL__c &gt;0, ( PCYC_Actual_NHL_MCL__c / PCYC_Planned_NHL_MCL__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NHL MCL % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_MCL_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>NHL MCL Priority</description>
+        <externalId>false</externalId>
+        <label>NHL MCL Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_MCL_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>NHL MCL Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_PDE_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_NHL_PDE__c &gt; 0 &amp;&amp; PCYC_Planned_NHL_PDE__c &gt; 0, ( PCYC_Actual_NHL_PDE__c / PCYC_Planned_NHL_PDE__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NHL PDE % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>NHL PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_NHL__c &gt;0 &amp;&amp; PCYC_Planned_NHL__c &gt; 0, ( PCYC_Actual_NHL__c / PCYC_Planned_NHL__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NHL Team % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_NHL_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>NHL Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Overall_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE_Position_1__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE Position 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE_Position_2__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE Position 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE_Position_3__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE Position 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE_Position_4__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE Position 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE_Position_5__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE Position 5</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_CLL_L1__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>CLL L1 Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_CLL_L2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for CLL L2</description>
+        <externalId>false</externalId>
+        <label>CLL L2 Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_CLL_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>CLL Planned PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_CLL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>CLL Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_MCL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for CLL L1</description>
+        <externalId>false</externalId>
+        <label>MCL Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_MZL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Calls for MZL</description>
+        <externalId>false</externalId>
+        <label>MZL Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_NHL_MCL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Calls for NHL MCL</description>
+        <externalId>false</externalId>
+        <label>NHL MCL Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_NHL_PDE__c</fullName>
+        <externalId>false</externalId>
+        <label>NHL Planned PDE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_NHL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for NHL</description>
+        <externalId>false</externalId>
+        <label>NHL Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Planned_WM__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Calls for WM</description>
+        <externalId>false</externalId>
+        <label>WM Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_Rep_To_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cycle_Plan_Target_vod__r.Cycle_Plan_vod__r.Owner:User.FirstName &amp; &quot; &quot; &amp; Cycle_Plan_Target_vod__r.Cycle_Plan_vod__r.Owner:User.LastName &amp;&quot; - &quot;&amp; Product_vod__r.Name</formula>
+        <label>PCYC Rep To Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_WM_Percentage_To_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (PCYC_Actual_WM__c &gt; 0 &amp;&amp; PCYC_Planned_WM__c &gt;0,  ( PCYC_Actual_WM__c / PCYC_Planned_WM__c ) *100, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WM % To Plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_WM_Priority_Guidance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>WM Priority</description>
+        <externalId>false</externalId>
+        <label>WM Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCYC_WM_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>WM Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The number of Planned Details for the account-product combination. This field will generally be data loaded.</description>
+        <externalId>false</externalId>
+        <label>Planned_Details</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority_vod__c</fullName>
+        <description>Indicates the detailing priority for the targeted product.</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Catalog</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Details</relationshipLabel>
+        <relationshipName>Cycle_Plan_Details</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_vod__c</fullName>
+        <description>The remaining number of calls the user must complete in the Cycle Plan period to achieve their planned call objective for a product and the targeted account.  Default value is 0.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISBLANK(Planned_Details_vod__c ),ISBLANK(Actual_Details_vod__c)),0
+                  ,IF(ISBLANK(Actual_Details_vod__c) ,Planned_Details_vod__c
+                      , IF(ISBLANK(Planned_Details_vod__c ),0
+                            , IF((Planned_Details_vod__c -Actual_Details_vod__c)&gt;=0,
+                                     Planned_Details_vod__c -Actual_Details_vod__c,
+                                     0)
+                        )
+                    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of details for the product scheduled by the user against the Cycle Plan Target.</description>
+        <externalId>false</externalId>
+        <label>Scheduled Details</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Actual_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of actual details made for the product against a Cycle Plan Planned by the team of representatives.</description>
+        <externalId>false</externalId>
+        <label>Actual Total Details</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Attainment_vod__c</fullName>
+        <description>It holds the overall product detail attainment across the team for the product against a Cycle Plan Target.</description>
+        <externalId>false</externalId>
+        <formula>IF( Total_Planned_Details_vod__c &gt; 0,  Total_Actual_Details_vod__c / Total_Planned_Details_vod__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attainment Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Planned_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of details for the product planned by the team of representatives against the Cycle Plan Target.</description>
+        <externalId>false</externalId>
+        <label>Planned Total Details</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Remaining_vod__c</fullName>
+        <description>The remaining number of calls the team must complete in the Cycle Plan period to achieve their planned call objective for a product and the targeted account.  Default value is 0.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISBLANK(Total_Planned_Details_vod__c ),ISBLANK(Total_Actual_Details_vod__c)),0
+                  ,IF(ISBLANK(Total_Actual_Details_vod__c) ,Total_Planned_Details_vod__c
+                      , IF(ISBLANK(Total_Planned_Details_vod__c ),0
+                            , IF((Total_Planned_Details_vod__c -Total_Actual_Details_vod__c)&gt;=0,
+                                     Total_Planned_Details_vod__c -Total_Actual_Details_vod__c,
+                                     0)
+                        )
+                    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Scheduled_Details_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of details for the product scheduled by the team of representatives against the Cycle Plan Target.</description>
+        <externalId>false</externalId>
+        <label>Scheduled Total Details</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Cycle Plan Detail</label>
+    <nameField>
+        <displayFormat>CPD-{000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Cycle Plan Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>PlannedDetailsLessThan0</fullName>
+        <active>true</active>
+        <description>Target Details can not be less than 0.</description>
+        <errorConditionFormula>Planned_Details_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Actual_Details_vod__c</errorDisplayField>
+        <errorMessage>Target Details can not be less than 0.</errorMessage>
+    </validationRules>
+</CustomObject>
